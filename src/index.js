@@ -9,13 +9,22 @@ const button = document.querySelector('.press-me')
 button.addEventListener('click', onStartCountdown);
 
 function onStartCountdown() {
-  setInterval(() => {
+  if (timer.classList.contains('active')) {
+    return;
+  }
+  timer.classList.add('active');
+
+  let interval =setInterval(() => {
     // Real time
     let real = currentTime();
     // Time in future;
     let future = targetTime();
     // some action with time; 
     let differentInTime = future - real;
+
+    if (differentInTime < 0) {
+      clearInterval(interval);
+    }
     // result;
     let value = createCountdown(differentInTime);
     console.log(value);
