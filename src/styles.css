@@ -16,5 +16,11 @@ body {
   /*
    * CSS image reference example.
    */
-  background-image: url('./images/bg-pattern.png');
+}
+
+.press-me {
+  background-color: yellowgreen;
+  font-size: 20px;
+  border-radius: 10px;
+  color: brown;
 }
