@@ -1,35 +1,31 @@
 import './styles.css';
-import countDownTemplate from './templates/countdown.hbs';
+import CountdownTimer from './js/CountdownTimer'
+import targetTime from './js/targetTime' 
 import currentTime from './js/currentTime'
-import targetTime from './js/targetTime'
 import createCountdown from './js/createCountdown.js'
+import countDownTemplate from './templates/countdown.hbs';
 
-const timer = document.querySelector('.timer');
-const button = document.querySelector('.press-me')
-button.addEventListener('click', onStartCountdown);
+let countdownValue = new CountdownTimer('#timer-1', targetTime() );
 
-function onStartCountdown() {
-  if (timer.classList.contains('active')) {
-    return;
-  }
-  timer.classList.add('active');
-
-  let interval =setInterval(() => {
+if (targetTime > currentTime) {
+    let interval = setInterval(() => {
     // Real time
-    let real = currentTime();
-    // Time in future;
-    let future = targetTime();
+    //   let real = currentTime();
+      
+    // // Time in future;
+    // let future = targetTime();
+      
     // some action with time; 
-    let differentInTime = future - real;
+    let timeDifferent = targetTime() - currentTime() ;
 
-    if (differentInTime < 0) {
+    if (timeDifferent < 0) {
       clearInterval(interval);
     }
     // result;
-    let value = createCountdown(differentInTime);
-    console.log(value);
+    let value = createCountdown(timeDifferent);
     //generate new markUp;
-    timer.innerHTML = countDownTemplate(value)
+      countdownValue.findSelector()
+        .innerHTML = countDownTemplate(value)
   }, 1000
   )
 }
