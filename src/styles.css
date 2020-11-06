@@ -15,14 +15,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background-color:red;
-}
-
-.press-me {
-  background-color: #242223;
-  font-size: 20px;
-  border-radius: 10px;
-  color: aliceblue;
+  background-color: skyblue;
+  margin: 0;
 }
 
 .timer {
@@ -36,12 +30,19 @@ body {
 .field {
   background-color: #242223;
   width: 250px;
-  margin: 25px;
+  margin: 300px 25px 0;
   height: 200px;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 100px;
+  border: 5px solid red;
+}
+
+.field:first-child,
+.field:last-child {
+  background-color: red;
+  border: 5px solid #242223;
 }
 
 .value {
