@@ -14,8 +14,8 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   margin-left: auto;
   margin-right: auto;
-  max-width: 1600px;
   text-align: center;
+  background-color:red;
 }
 
 .press-me {
