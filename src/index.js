@@ -2,7 +2,7 @@ import './styles.css';
 import CountdownTimer from './js/CountdownTimer'
 import targetTime from './js/targetTime' 
 import currentTime from './js/currentTime'
-import createCountdown from './js/createCountdown.js'
+import distributionOfTime from './js/distributionOfTime.js'
 import countDownTemplate from './templates/countdown.hbs';
 
 let countdownValue = new CountdownTimer('#timer-1', targetTime() );
@@ -22,7 +22,7 @@ if (targetTime > currentTime) {
       clearInterval(interval);
     }
     // result;
-    let value = createCountdown(timeDifferent);
+    let value = distributionOfTime(timeDifferent);
     //generate new markUp;
       countdownValue.findSelector()
         .innerHTML = countDownTemplate(value)
